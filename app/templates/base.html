@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SQLi Demo</title>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('routes.index') }}">Home</a> |
+      <a href="{{ url_for('routes.login_vuln_get') }}">Vulnerable Login</a> |
+      <a href="{{ url_for('routes.login_safe_get') }}">Secure Login</a> |
+      <a href="{{ url_for('routes.dashboard') }}">Dashboard</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

@@ -1,5 +1,6 @@
 from flask import Flask
 from .init_db import init_db
+from .routes import bp as routes_bp
 
 def create_app():
     app = Flask(__name__)
@@ -9,8 +10,7 @@ def create_app():
     # Initialize DB + seed users
     init_db(app.config["DB_PATH"])
 
-    @app.get("/")
-    def home():
-        return "SQL Injection Demo Running"
+    # IMPORTANT: register routes
+    app.register_blueprint(routes_bp)
 
     return app

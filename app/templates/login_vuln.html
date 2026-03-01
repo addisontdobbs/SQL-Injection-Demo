@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Vulnerable Login</h2>
+<form method="post" action="/login_vuln">
+  <label>Username</label><br>
+  <input name="username"><br><br>
+  <label>Password</label><br>
+  <input name="password" type="password"><br><br>
+  <button type="submit">Login</button>
+</form>
+{% endblock %}
+
